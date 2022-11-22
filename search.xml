@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/11/22/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Ubuntu/Debian Development Environment Setup</title>
+    <url>/2022/11/19/ubuntu-dev-environment-setup/</url>
+    <content><![CDATA[<p>This is a guide to setting up a development environment on Ubuntu&#x2F;Debian. It is intended to be a quick reference for myself, but it may be useful to others as well.</p>
+<h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><h3 id="Enable-Disk-Encryption"><a href="#Enable-Disk-Encryption" class="headerlink" title="Enable Disk Encryption"></a>Enable Disk Encryption</h3><p>If you are using a laptop, you should enable ful disk encryption. The full disk encryption need to happen at install time. I’m running on PopOs and it gives the option of enabling full disk encryption during the install process, I am not sure about other distros.</p>
+<h3 id="System-updates"><a href="#System-updates" class="headerlink" title="System updates"></a>System updates</h3><p>The first thing you should do is update the system and install security updates. This can be done with the following commands:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br><span class="line">sudo apt dist-upgrade</span><br></pre></td></tr></table></figure>
+
+<h2 id="Installing-Desktop-Applications"><a href="#Installing-Desktop-Applications" class="headerlink" title="Installing Desktop Applications"></a>Installing Desktop Applications</h2><p>Your OS comes with an app store which has most app but it might sometimes lack some of the apps you need so instead you can use flatpack.</p>
+<p><a class="link"   href="https://flatpak.org/" >Flatpack<i class="fas fa-external-link-alt"></i></a> is the new standard for Desktop applications on Linux. It is a sandboxed application.</p>
+<p>To install flatpack run the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install flatpak</span><br></pre></td></tr></table></figure>
+
+<p>To install an application run the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">flatpak install flathub &lt;app-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Some of the apps I use are: Whatsapp, Discord, Slack, Postman, chrome, calibre, Trilium, VLC Media Player, Zoom, and Discord.</p>
+<h2 id="Installing-Development-Tools"><a href="#Installing-Development-Tools" class="headerlink" title="Installing Development Tools"></a>Installing Development Tools</h2><p>Don’t install IDE and other development tools from the app store or flatpack. Instead, install them from the terminal. This will make it easier to update them.</p>
+<p>Install the build-essential package.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install build-essential</span><br></pre></td></tr></table></figure>
+
+<h3 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a>Visual Studio Code</h3><p>Visual Studio Code is a powerful desktop editor for programming, with built-in support for version control and debugging. The large range of extensions for Visual Studio Code enable it to work with every popular programming language and framework. It is available free of charge, <a class="link"   href="https://code.visualstudio.com/" >Get it here<i class="fas fa-external-link-alt"></i></a>.</p>
+<h3 id="Jetbrains-IDEs"><a href="#Jetbrains-IDEs" class="headerlink" title="Jetbrains IDEs"></a>Jetbrains IDEs</h3><p>Personally I think Jetbrains IDEs are the best IDEs for programming they have higher intellisense . They are available for free for students and teachers. <a class="link"   href="https://www.jetbrains.com/student/" >Get it here<i class="fas fa-external-link-alt"></i></a>.</p>
+<h3 id="Lapce"><a href="#Lapce" class="headerlink" title="Lapce"></a>Lapce</h3><p>Lapce is a lightweight code editor for programming built in Rust. It is available for free, <a class="link"   href="https://lapce.dev/" >Get it here<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h3><p>Ubuntu comes with a text editor called Gedit. It is a simple text editor that is good for editing text files. It becomes handy when you pair it with the terminal. To open a file in Gedit from the terminal run the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gedit &lt;file-name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Installing-Programming-Languages"><a href="#Installing-Programming-Languages" class="headerlink" title="Installing Programming Languages"></a>Installing Programming Languages</h2><p>Ubuntu comes with C, C++, and Python pre-installed.</p>
+<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><p>To install Node.js, we will use nvm (Node Version Manager). Nvm is a tool that allows you to install and manage multiple versions of Node.js.<br>To install nvm run the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash</span><br></pre></td></tr></table></figure>
+
+<p>To install the LTS version of Node.js run the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvm install --lts</span><br></pre></td></tr></table></figure>
+
+<h3 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h3><p>To install Go, run the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install golang</span><br></pre></td></tr></table></figure>
+
+<h2 id="Installing-Databases"><a href="#Installing-Databases" class="headerlink" title="Installing Databases"></a>Installing Databases</h2><p>You should consider using containers for databases. Containers are isolated environments that run on top of your OS. They are lightweight and easy to setup. They are also easy to backup and restore and also enable you to have multiple versions of the database server.</p>
+<h3 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h3><p>To install PostgreSQL, run the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install postgresql</span><br><span class="line">sudo postgresql-setup --initdb</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> postgresql</span><br><span class="line">sudo systemctl start postgresql</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Work In Progress</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>ubuntu, debian, development, environment, setup, linux, programming</tag>
+      </tags>
+  </entry>
+</search>
