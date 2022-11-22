@@ -114,6 +114,16 @@ sudo systemctl enable postgresql
 sudo systemctl start postgresql
 ```
 
+These commands will install PostgreSQL, initialize the database, enable the service, and start the service.
+
+To create a new user, a database, and grant all privileges to the user on the database, run the following commands:
+
+```sql
+sudo -u postgres psql
+postgres=# create database mydb;
+postgres=# create user myuser with encrypted password 'mypass';
+postgres=# grant all privileges on database mydb to myuser;
+
 ```
-Work In Progress
-```
+
+You can refer to the [PostgreSQL documentation](https://www.postgresql.org/docs/13/tutorial-createdb.html) for more information.
