@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/11/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Ubuntu/Debian Development Environment Setup</title>
-    <url>/2022/11/19/ubuntu-dev-environment-setup/</url>
+    <url>/ubuntu-dev-environment-setup/</url>
     <content><![CDATA[<p>This is a guide to setting up a development environment on Ubuntu&#x2F;Debian. It is intended to be a quick reference for myself, but it may be useful to others as well.</p>
 <h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><h3 id="Enable-Disk-Encryption"><a href="#Enable-Disk-Encryption" class="headerlink" title="Enable Disk Encryption"></a>Enable Disk Encryption</h3><p>If you are using a laptop, you should enable ful disk encryption. The full disk encryption need to happen at install time. I’m running on PopOs and it gives the option of enabling full disk encryption during the install process, I am not sure about other distros.</p>
 <h3 id="System-updates"><a href="#System-updates" class="headerlink" title="System updates"></a>System updates</h3><p>The first thing you should do is update the system and install security updates. This can be done with the following commands:</p>
@@ -59,7 +41,11 @@
 <h3 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h3><p>To install PostgreSQL, run the following command:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install postgresql</span><br><span class="line">sudo postgresql-setup --initdb</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> postgresql</span><br><span class="line">sudo systemctl start postgresql</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Work In Progress</span><br></pre></td></tr></table></figure>
+<p>These commands will install PostgreSQL, initialize the database, enable the service, and start the service.</p>
+<p>To create a new user, a database, and grant all privileges to the user on the database, run the following commands:</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">sudo <span class="operator">-</span>u postgres psql</span><br><span class="line">postgres<span class="operator">=</span># <span class="keyword">create</span> database mydb;</span><br><span class="line">postgres<span class="operator">=</span># <span class="keyword">create</span> <span class="keyword">user</span> myuser <span class="keyword">with</span> encrypted password <span class="string">&#x27;mypass&#x27;</span>;</span><br><span class="line">postgres<span class="operator">=</span># <span class="keyword">grant</span> <span class="keyword">all</span> privileges <span class="keyword">on</span> database mydb <span class="keyword">to</span> myuser;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>You can refer to the <a class="link"   href="https://www.postgresql.org/docs/13/tutorial-createdb.html" >PostgreSQL documentation<i class="fas fa-external-link-alt"></i></a> for more information.</p>
 ]]></content>
       <tags>
         <tag>ubuntu, debian, development, environment, setup, linux, programming</tag>
